@@ -1,0 +1,72 @@
+% fonts
+
+\usepackage[T1]{fontenc} % Apparently this https://tex.stackexchange.com/questions/287312/font-not-loadable-metric-data-not-found-or-bad
+\usepackage[full]{textcomp}
+\usepackage{cabin} % sans serif
+\usepackage[varqu,varl]{inconsolata} % sans serif typewriter
+\usepackage[final,expansion=alltext]{microtype}
+\usepackage[english]{babel}
+\usepackage[fleqn]{mathtools}
+\usepackage[cal=boondoxo]{mathalpha} % mathcal
+
+\usepackage{newtxtext}
+% \usepackage{txfonts} % See https://tex.stackexchange.com/questions/444243/symbols-not-showing-up
+
+
+\usepackage[bigdelims,vvarbb]{newtxmath} % bb from STIX % "should be loaded AFTER the text font" - https://mirrors.mit.edu/CTAN/fonts/newtx/doc/newtxdoc.pdf 
+
+% geometry of the page
+
+\usepackage[
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in
+    ]{geometry}
+
+% paragraph spacing
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5ex plus 0.4ex minus 0.2ex}
+
+% useful packages
+
+% \usepackage{natbib} % incompatible with BibLaTeX
+\usepackage{epsfig}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{blindtext}
+
+% Leon additions
+
+\usepackage{enumitem} % allows for enumerate[resume]
+\usepackage[style=authoryear-comp, natbib=true]{biblatex} % natbib=true allows \citep
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+
+% Section formatting using titlesec
+\usepackage{titlesec}
+\titleformat*{\section}{\sffamily\Large}
+\titleformat*{\subsection}{\sffamily\large}
+\titleformat*{\subsubsection}{\itshape}
+
+% center figures by default
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
+% italic figure captions
+\usepackage[format=plain,
+            textfont=it]{caption}
+% simple TO DO macro
+\usepackage{xcolor}
+\newcommand\todo[1]{\textcolor{orange}{[#1]}}
+
+\newcommand{\indsim}{\overset{\mathrm{ind}}{\sim}}
+\renewcommand{\d}{\mathrm{d}\;}
+\newcommand{\E}{\mathrm{E}}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\N}{\mathrm{N}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ave}{\mathrm{ave}}
+\renewcommand\vec{\boldsymbol}
