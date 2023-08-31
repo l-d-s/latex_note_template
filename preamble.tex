@@ -63,7 +63,9 @@
 \newcommand\todo[1]{\textcolor{orange}{[#1]}}
 
 \newcommand{\indsim}{\overset{\mathrm{ind}}{\sim}}
-\renewcommand{\d}{\mathrm{d}\;}
+% https://tex.stackexchange.com/questions/60545/should-i-mathrm-the-d-in-my-integrals
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
 \newcommand{\E}{\mathrm{E}}
 \renewcommand{\P}{\mathrm{P}}
 \newcommand{\N}{\mathrm{N}}
