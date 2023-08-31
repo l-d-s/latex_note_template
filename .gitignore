@@ -12,3 +12,4 @@ result
 *.run.xml
 my_library.bib
 result_dev/
+.direnv
