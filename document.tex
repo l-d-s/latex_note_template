@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[11pt,fleqn]{article}
 % [fleqn] left-aligns all equations
 
 \input{preamble}
@@ -6,74 +6,33 @@
 \addbibresource{my_library.bib}
 \graphicspath{{./fig/}}
 
-\title{Title of the Paper}
-\author{Leon Di Stefano}
-\date{\today}
-
 \begin{document}
+\raggedright % left-aligns everything
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % %
-\maketitle
-% \vspace{0.1in}
-% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% \begin{flushleft}
+\textbf{Note on a topic} \\
+Leon Di Stefano \\
+\today
+% \end{flushleft}
 
-\begin{abstract}\noindent
+\vspace{0.1in}
 
-    Four sentences: 
-    State the problem. 
-    Why it's an interesting problem.
-    What your solution achieves.
-    What follows from your solution.
-    % State the problem
-    
-    % Why it's an interesting problem
-    
-    % What your solution achieves
-    
-    % What follows from your solution
-    
-\end{abstract}
+\normalsize
 
-\section{Introduction}
-% Describe the problem
-% Use an example to introduce it
-\subsubsection*{Describe the problem}
+Example figure:
 
-Use an example to introduce it.
+\begin{center}\includegraphics[width=16cm]{overlap_metrics_figure}\end{center}
 
-% State your contributions
-% Explicit list, to be backed up with evidence
-\subsubsection*{State your contributions}
+Example math:
 
-Use an explicit list, to be backed up by evidence.
+\begin{align*}
+    r_A &= \frac{\mathrm{rank}(-|\beta_A^g|) - 1/2}{G} \\
+    r_B &= \frac{\mathrm{rank}(-|\beta_B^g|) - 1/2}{G} \\
+    r_\text{gap} &= \frac{|r_A - r_B|}{1 - \min(r_A, r_B)}.
+\end{align*}
 
-\section{The problem}
-
-Describe the problem, in 1 page.
-
-\section{The main idea}
-
-
-Describe your idea, in 2 pages.
-
-
-
-\section{The idea in detail}
-
-Peyton-Jones suggests 5 pages for this.
-
-\section{Related work}
-
-Put this last. 1-2 pages; be generous with credit.
-
-
-
-\section{Conclusions and further work}
+Test citation: \citep{rubinObjectiveCausalInference2008}.
 
 \printbibliography
-
-\newpage
-
-\section*{Appendix}
 
 \end{document}

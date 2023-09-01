@@ -2,7 +2,7 @@
 {
   description = "LaTeX Document Demo";
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-22.05;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-unstable;
     flake-utils.url = github:numtide/flake-utils;
   };
   outputs = { self, nixpkgs, flake-utils }:
@@ -10,7 +10,7 @@
     let
       pkgs = nixpkgs.legacyPackages.${system};
       tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-basic 
+          inherit (pkgs.texlive) scheme-small 
           
           latex-uni8 # replaces fontenc I think
           # textcomp
@@ -22,6 +22,17 @@
           mathtools # amsmath
           geometry
           mathalpha
+
+          # sans math as text
+          libertine
+          libertinus-type1
+          libgreek
+          mathastext
+          # Resolving "No file LGRcmr.fd."
+          # https://github.com/tud-cd/tudscr/issues/41
+          babel-greek
+          greek-fontenc
+          cbfonts
 
           latex-bin 
           latexmk
