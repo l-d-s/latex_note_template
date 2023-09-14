@@ -1,0 +1,41 @@
+\documentclass[11pt,fleqn]{article}
+% [fleqn] left-aligns all equations
+
+\input{preamble/preamble}
+
+\addbibresource{my_library.bib}
+\graphicspath{{./fig/}}
+
+\begin{document}
+\raggedright % left-aligns everything
+
+% \begin{flushleft}
+\section*{Document 2}
+
+Leon Di Stefano \\
+\today
+% \end{flushleft}
+
+\vspace{0.1in}
+
+\normalsize
+
+\subsection*{Subsection}
+
+\subsubsection*{Subsubsection}
+
+A test table:
+\begin{center}
+    \begin{tabular}{ c c c c }
+                  & dogs  & cats & squirrels \\ 
+     \hline
+     red          & N     & Y    & ?         \\  
+     blue         & Y     & Y    & N         \\
+     green        & Y     & ?    & ?
+    \end{tabular}
+\end{center}
+... followed by a random citation to
+\cite{rubinTeachingStatisticalInference2004}.
+
+
+\end{document}

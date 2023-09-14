@@ -1,0 +1,46 @@
+\documentclass[11pt,fleqn]{article}
+% [fleqn] left-aligns all equations
+
+\input{preamble/preamble}
+
+\addbibresource{my_library.bib}
+\graphicspath{{./fig/}}
+
+\title{Test document 1}
+\author{Leon Di Stefano}
+
+\begin{document}
+\maketitle
+
+\raggedright % left-aligns everything
+
+\vspace{0.1in}
+
+\normalsize
+
+\section*{First section}
+
+
+Testing some math on the Fisher scoring algorithm:
+\[
+    I_{\beta\beta}\Delta\beta = s_\beta
+\]
+... where
+$\Delta\beta = \beta_\text{new} - \beta$ is the increment by which to update
+$\beta$
+and
+$s_\beta  = \nabla_\beta l$
+is the score.
+
+And a citation to \cite{greenIterativelyReweightedLeast1984}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=8cm]{fig1}
+    \caption{What do you think this is?}
+    \label{fig:fig_1}
+\end{figure}
+
+\printbibliography
+
+\end{document}

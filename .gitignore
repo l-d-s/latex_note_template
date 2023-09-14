@@ -1,15 +1,4 @@
 result
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.pdf
-*.blg
-*.bbl
-*.bcf
-*.blg
-*.out
-*.run.xml
 my_library.bib
 result_dev/
 .direnv

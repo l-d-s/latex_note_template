@@ -59,6 +59,8 @@
           titlesec # section styling
           xcolor # for TO DOs
           # graphicx # already included
+
+          csquotes # Warning like polyglossia detected but csquotes not found
           ;
       };
     in rec {
@@ -66,7 +68,7 @@
         document = pkgs.stdenvNoCC.mkDerivation rec {
           name = "latex-demo-document";
           src = self;
-          buildInputs = [ pkgs.coreutils tex pkgs.biber pkgs.kile ];
+          buildInputs = [ pkgs.coreutils tex pkgs.biber pkgs.kile pkgs.bibtool ];
           phases = ["unpackPhase" "buildPhase" "installPhase"];
           buildPhase = ''
             export PATH="${pkgs.lib.makeBinPath buildInputs}";
@@ -81,12 +83,11 @@
               ## described in https://tex.stackexchange.com/questions/287312/font-not-loadable-metric-data-not-found-or-bad
               ##
               ## Needed to adjust VSCode LaTex plugin to handle this.
-            latexmk -interaction=nonstopmode -pdf -pdflatex \
-              document.tex
+            latexmk -interaction=nonstopmode -pdf -pdflatex *.tex
           '';
           installPhase = ''
             mkdir -p $out
-            cp document.* $out/
+            cp *.pdf *.log *.fls *.fdb_latexmk *.blg *.bcf *.bbl *.aux *.synctex.gz *.xml $out/
           '';
         };
       };

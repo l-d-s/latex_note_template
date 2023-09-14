@@ -4,18 +4,21 @@
 % \usepackage[full]{textcomp}
 
 % \usepackage{cabin} % sans serif
-\usepackage{libertine}
+% \usepackage{libertine}
+\usepackage{euler}
 \usepackage{libertinus-type1}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[libertinus,sans]{libgreek}
-\usepackage[defaultmathsizes]{mathastext}
+\usepackage[defaultmathsizes,italic]{mathastext}
 \usepackage{amsmath}
+\usepackage{amssymb} % For squiggly right arrow
 
 \usepackage[varqu,varl]{inconsolata} % sans serif typewriter
 % \usepackage[final,expansion=alltext]{microtype}
 \usepackage[english]{babel}
 % \usepackage[fleqn]{mathtools}
 % \usepackage[cal=boondoxo]{mathalpha} % mathcal
+\usepackage{csquotes}
 
 % \usepackage{newtxtext}
 % \usepackage{txfonts} % See https://tex.stackexchange.com/questions/444243/symbols-not-showing-up
@@ -39,6 +42,7 @@
 
 % useful packages
 
+\usepackage{mathtools} % for matrix* environment
 % \usepackage{natbib} % incompatible with BibLaTeX
 % \usepackage{epsfig}
 % \usepackage{url}
@@ -54,21 +58,21 @@
 % \usepackage{hyperref}
 
 % % Section formatting using titlesec
-% \usepackage{titlesec}
-% \titleformat*{\section}{\sffamily\Large}
-% \titleformat*{\subsection}{\sffamily\large}
-% \titleformat*{\subsubsection}{\itshape}
+\usepackage{titlesec}
+\titleformat*{\section}{\sffamily\bfseries\Large\center}
+\titleformat*{\subsection}{\sffamily\bfseries\large}
+\titleformat*{\subsubsection}{\itshape}
 
 % % center figures by default
 % \makeatletter
 % \g@addto@macro\@floatboxreset\centering
 % \makeatother
 % % italic figure captions
-% \usepackage[format=plain,
-%             textfont=it]{caption}
+\usepackage[format=plain,
+            textfont=it]{caption}
 % % simple TO DO macro
-% \usepackage{xcolor}
-% \newcommand\todo[1]{\textcolor{orange}{[#1]}}
+\usepackage{xcolor}
+\newcommand\todo[1]{\textcolor{orange}{[#1]}}
 
 \newcommand{\indsim}{\overset{\mathrm{ind}}{\sim}}
 % https://tex.stackexchange.com/questions/60545/should-i-mathrm-the-d-in-my-integrals
@@ -80,4 +84,5 @@
 \newcommand{\diag}{\mathrm{diag}}
 \newcommand{\ave}{\mathrm{ave}}
 \newcommand{\corr}{\mathrm{corr}}
+\newcommand{\ind}{\mathrel{\perp\mspace{-10.5mu}\perp}}
 \renewcommand\vec{\boldsymbol}
